@@ -2,9 +2,9 @@
     pageEncoding="UTF-8" %>  
 
 	<section>
-		<h1>행사 등록 화면</h1>
+		<h1 class="hidden">행사 등록 화면</h1>
 		<section>
-			<h1>행사 등록 정보</h1>
+			<h1 class="hidden">행사 등록 정보</h1>
 			<form method="post">
 			<dl>
 				<dt>이름</dt>

@@ -1,16 +1,16 @@
 @CHARSET "UTF-8";
 
-input#select1:checked+label.member {
+input #select1:checked+label.member {
 	background: blue;
 	color: white;
 }
 
-input#select2:checked+label.board {
+input #select2:checked+label.board {
 	background: blue;
 	color: white;
 }
 
-input#select1, input#select2 {
+input #select1, input#select2 {
 	display: none;
 }
 
@@ -27,10 +27,10 @@ label {
 	display: none;
 }
 
-input#select1:checked ~ .member {
+input #select1:checked ~ .member {
 	display: block;
 }
 
-input#select2:checked ~ .board {
+input #select2:checked ~ .board {
 	display: block;
 }

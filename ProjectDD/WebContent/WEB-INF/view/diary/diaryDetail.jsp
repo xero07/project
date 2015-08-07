@@ -7,33 +7,33 @@
 
 
 	<section id="content">
-		<h1>커플일기</h1>
+		<h1 class="hidden">커플일기</h1>
 
-		<section>
+		<section class="detail">
 			<h1 class="hidden">일기내용</h1>
 
 			<table>
 				<tr>
-					<dt>제목</dt>
-					<dd>${d.title}</dd>
+					<dt class="hidden">제목</dt>
+					<dd class="detail-title">${d.title}</dd>
 				</tr>
 				
 				<tr>
-					<dt>작성자</dt>
-					<dd>${d.memberId}</dd>
+					<dt class="hidden">작성자</dt>
+					<dd class="detail-id">${d.memberId}</dd>
 				</tr>
 				
 				<tr>
-					<dt>등록일</dt>
-					<dd><fmt:formatDate value="${d.regDate}" pattern="yyyy-MM-dd" /></dd>
+					<dt class="hidden">등록일</dt>
+					<dd class="detail-date"><fmt:formatDate value="${d.regDate}" pattern="yyyy-MM-dd" /></dd>
 				</tr>
 				<tr>
-					<dt>이미지</dt>
+					<dt class="hidden">이미지</dt>
 					<dd><img src="${ctxName}/resource/upload/diary/${di.name}" /></dd>
 				</tr>
 				<tr>
-					<dt>내용</dt>
-					<dd>${d.content}</dd>
+					<dt class="hidden">내용</dt>
+					<dd class="detail-content">${d.content}</dd>
 				</tr>
 			</table>
 		</section>

@@ -4,10 +4,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 	<section>
-	<h1>행사 내용</h1>
+	<h1 class="hidden">행사 내용</h1>
 
 	<article>
-	<h1>행사 내용</h1>
+	<h1 class="hidden">행사 내용</h1>
 	<dl>
 		<dt>이름</dt>
 		<dd>${e.name}</dd>
@@ -27,7 +27,7 @@
 	</article> 
 	
 	<nav>
-	<h1>버튼</h1>
+	<h1 class="hidden">버튼</h1>
 	<div>
 		<a href="eventUpdate?c=${e.code}">수정</a>
 		<a href="eventDelete?c=${e.code}">삭제</a>

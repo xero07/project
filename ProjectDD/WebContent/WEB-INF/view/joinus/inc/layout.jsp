@@ -11,8 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-<link href="${ctxName}/resource/css/layout.css" rel="stylesheet" 	type="text/css">
-<link href="${ctxName}/resource/css/joinMem.css" rel="stylesheet" 	type="text/css">
+<link href="${ctxName}/resource/css/joinMem.css" rel="stylesheet" type="text/css">
 <script type="text/javascript"	src="${ctxName }/resource/js/modernizr.js"></script>
 <!-- 이미지 미리보기 -->
 <script type="text/javascript">

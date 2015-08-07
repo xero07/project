@@ -7,23 +7,23 @@
 <div>
 	<form method="get" action="eventSearch?c=${key}">
 		<section>
-			<h1>행사 관리 페이지</h1>
+			<h1 class="hidden">행사 관리 페이지</h1>
 			<section>
-				<h1>행사 검색</h1>
+				<h1 class="hidden">행사 검색</h1>
 				<fieldset>
-					<legend>행사 검색 폼</legend>
-					<label>행사 검색</label> <input type="text" name="c" /> <input
+					<legend class="hidden">행사 검색 폼</legend>
+					<label class="hidden">행사 검색</label> <input type="text" name="c" /> <input
 						type="submit" value="검색" />
 				</fieldset>
 			</section>
 	</form>
 	<form method="POST">
 		<section>
-			<h1>검색결과 표</h1>
+			<h1 class="hidden">검색결과 표</h1>
 			<table>
 				<thead>
 					<tr>
-						<th>체크박스</th>
+						<th></th>
 						<th>코드</th>
 						<th>이름</th>
 						<th>시작일</th>
@@ -50,13 +50,13 @@
 		</section>
 
 		<section>
-			<h1>버튼 목록</h1>
+			<h1 class="hidden">버튼 목록</h1>
 			<a href="eventReg">등록</a> <input type="submit" value="삭제" />
 		</section>
 	</form>
 
-	<nav>
-		<h1>페이지</h1>
+	<nav id="pager">
+		<h1 class="hidden">페이지</h1>
 		<ul>
 			<li><a href="">1</a></li>
 			<li><a href="">2</a></li>

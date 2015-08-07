@@ -5,13 +5,13 @@
 <c:set var="ctxName" value="${pageContext.request.contextPath }" />
 
 	<section>
-		<h1>커플일기</h1>
+		<h1 class="hidden">커플일기</h1>
 
 		<section>
-			<h1>커플 일기 내용</h1>
+			<h1 class="hidden">커플 일기 내용</h1>
 			
 			<form method="post" enctype="multipart/form-data">
-				<legend>커플 일기 작성</legend>
+				<legend class="hidden">커플 일기 작성</legend>
 				<fieldset>
 					<table>
 						<tr>

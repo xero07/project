@@ -1,21 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <%@taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <c:set var="ctxName" value="${pageContext.request.contextPath}"/>
 	<div>
 	<table>
 		<thead>
 			<tr>
-				<td>ÄÚµå</td>
-			 	<td>ÀÌ¸§</td>
-			 	<td>Áö¿ª</td>
-			 	<td>Å×¸¶</td>
-			 	<td>ÁÖ¼Ò</td>
-			 	<td>°¡°Ý</td>
-			 	<td>µî·ÏÀÏ</td>
-			 	<td>º°Á¡</td>
-			 	<td>°ü¸®ÀÚ</td>
+				<td>ì½”ë“œ</td>
+			 	<td>ì´ë¦„</td>
+			 	<td>ì§€ì—­</td>
+			 	<td>í…Œë§ˆ</td>
+			 	<td>ì£¼ì†Œ</td>
+			 	<td>ê°€ê²©</td>
+			 	<td>ë“±ë¡ì¼</td>
+			 	<td>ë³„ì </td>
+			 	<td>ê´€ë¦¬ìž</td>
 			</tr>
 		</thead>
 		
@@ -27,7 +28,7 @@
 			 	<td>${p.theme}</td>
 			 	<td>${p.address}</td>
 			 	<td>${p.cost}</td>
-			 	<td>${p.regDate}</td>
+			 	<td><fmt:formatDate value="${p.regDate}" pattern="yyyy-MM-dd" /></td>
 			 	<td>${p.starRating}</td>
 			 	<td>${p.adminId}</td>
 			</tr>
@@ -35,16 +36,16 @@
 	</table>
 	
  	<table>
-	<dt>ÀÌ¹ÌÁö</dt>
+	<dt>ì´ë¯¸ì§€</dt>
     	<dd><img src="${ctxName}/resource/upload/place/${pf.name}" /></dd>
 	 	
  		<thead>
  			<tr>
- 				<td>ÄÚµå</td>
- 				<td>Àå¼ÒÄÚµå</td>
- 				<td>¾ÆÀÌµð</td>
- 				<td>µî·ÏÀÏ</td>
- 				<td>³»¿ë</td>
+ 				<td>ì½”ë“œ</td>
+ 				<td>ìž¥ì†Œì½”ë“œ</td>
+ 				<td>ì•„ì´ë””</td>
+ 				<td>ë“±ë¡ì¼</td>
+ 				<td>ë‚´ìš©</td>
  			</tr>
  		</thead>
  		<tbody>
@@ -71,15 +72,16 @@
 			<dt>content</dt>
 			<dd><input name="content"></dl>
 												
-			<div><input type="submit" value="µî·Ï"></div>
+			<div><input type="submit" value="ë“±ë¡"></div>
 		</fieldset>
 	</form>	
 	 	
  	<form method="POST" action="placeDelete?c=${p.code}">
- 		<input type="submit" value="»èÁ¦">
+ 		<input type="submit" value="ì‚­ì œ">
  	</form>
  	<%-- <form method="GET" action="placeEdit?c=${p.code}">
- 		<input type="submit" value="¼öÁ¤"> --%>
- 	<a href="placeEdit?c=${p.code}">¼öÁ¤</a>
+ 		<input type="submit" value="ìˆ˜ì •"> --%>
+ 	<a href="placeEdit?c=${p.code}">ìˆ˜ì •</a>
+ 	<a href="place">ëª©ë¡</a>
  	
 </div>

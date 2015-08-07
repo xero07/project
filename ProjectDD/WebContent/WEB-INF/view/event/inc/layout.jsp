@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>자유게시판</title>
+<title>다이어리</title>
 <link href="${ctxName }/resource/css/base.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 
@@ -21,9 +21,6 @@
 	
 	<div id="body">
 	<div class="content-wrapper clearfix">
-	
-	<!-- 어사이드 영역 -->
-	<tiles:insertAttribute name="aside" />
 	
 	<main id="main">
 	<!-- 바디 영역 -->
