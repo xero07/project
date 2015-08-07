@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+input#select1:checked+label.member {
+	background: blue;
+	color: white;
+}
+
+input#select2:checked+label.board {
+	background: blue;
+	color: white;
+}
+
+input#select1, input#select2 {
+	display: none;
+}
+
+label {
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	background: gray;
+	text-align: center;
+	line-height: 30px;
+}
+
+.page1, .page2 {
+	display: none;
+}
+
+input#select1:checked ~ .member {
+	display: block;
+}
+
+input#select2:checked ~ .board {
+	display: block;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dailydate.web.dao.NoticeDao">
+
+   <select id="getNotices" resultType="com.dailydate.web.vo.Notice">
+      SELECT * FROM Notices
+   </select>
+   
+   <select id="getNotice" parameterType="string" resultType="com.dailydate.web.vo.Notice">
+      SELECT * FROM Notices WHERE CODE=#{code}
+   </select>
+   
+   <insert id="addNotice" parameterType="com.dailydate.web.vo.Notice">
+      <selectKey keyProperty="code" order="BEFORE" resultType="string">
+         select isnull(max(cast(code as int)),0)+1 code from Notices
+      </selectKey>
+      INSERT INTO Notices (code, title, content)
+      VALUES (#{code}, #{title}, #{content})
+   </insert>
+ <!-- 
+   <delete id="removeNotice" parameterType="string">
+      DELETE FROM FREENoticeS WHERE NoticeCODE = #{code}
+   </delete>
+   
+   <update id="updateNotice" parameterType="string">
+      UPDATE FREENoticeS SET Title=#{title}, Content=#{content}, Category=#{category} 
+      WHERE NoticeCode=#{code}
+   </update>
+   
+   <update id="hitsCount" parameterType="com.dailydate.web.vo.FreeNotice">
+      UPDATE FREENoticeS SET Hits = Hits + 1 WHERE NoticeCode=#{code}
+   </update>  -->
+</mapper>

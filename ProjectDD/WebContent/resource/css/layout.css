@@ -1,0 +1,114 @@
+@CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+a{ text-decoration: none; }
+
+#header, #aside, #footer {
+	font-family: 'Jeju Gothic', serif;
+	font-size: 13px;
+}
+
+#footer {
+	padding-top: 20px;
+	color: #fff;
+}
+
+#footer {
+	height: 100px;
+	background: #787878;
+	clear: inherit;
+}
+
+#logo {
+	position: absolute;
+	left: 15px;
+	top: 30px;
+}
+
+#top {
+	height: 25px;
+	background: #787878;
+}
+
+#top input {
+	vertical-align: middle;
+	margin-top: -3px;
+}
+
+#top input[type="text"] {
+	height: 15px;
+	border-style: none;
+	border-bottom: thin solid #fff;
+	background: #787878;
+	color: #fff;
+}
+
+#header {
+	width: 100%;
+	height: 105px;
+	background: #5AD4C8;
+}
+
+#page li {
+	display: inline;
+}
+
+#loginmenu {
+	margin-left: 950px;
+	padding-top: 5px;
+	padding-left: 10px;
+}
+
+#mainmenu {
+	margin-left: 633px;
+}
+
+#mainmenu li {
+	font-size: 15px;
+	font-weight: bold;
+	float: left;
+	padding-left: 10px;
+}
+
+
+#loginmenu li {
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	float: left;
+	padding-left: 15px;
+	vertical-align: middle;
+}
+
+#loginmenu a {
+	color: #ffffff;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.search {
+	display: inline-block;
+}
+
+	
+/*----------------------- 버튼이라는 공통분모 -----------------------------------*/
+	.button
+	{
+	   display:inline-block;
+	   overflow:hidden; /* block으로 지정하면 overflow(content가 영역밖에존재) 발생가능 */
+	   border:0px;
+	   text-indent:-100px;
+	}
+	.btn:hover, .button:hover
+	{
+	   cursor:pointer;
+	}
+	.zoom-button
+	{
+		width: 20px;
+		height: 20px;
+		background: url("../images/btnSearch.png") no-repeat center;
+	}
+	

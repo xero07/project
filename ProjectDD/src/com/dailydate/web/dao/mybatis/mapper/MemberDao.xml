@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dailydate.web.dao.MemberDao"> <!-- 구현할 인터페이스 -->
+	<select id="getMembers" resultType="com.dailydate.web.vo.Member">
+		SELECT * FROM MEMBERS ORDER BY REGDATE DESC
+	</select>
+	
+	<select id="getMember" parameterType="string" resultType="com.dailydate.web.vo.Member">
+		SELECT * FROM MEMBERS WHERE ID = #{id}
+	</select>
+	
+	<insert id="addMember" parameterType="com.dailydate.web.vo.Member">
+		INSERT INTO MEMBERS (ID, EMAIL, PASSWORD, GENDER, AGE)
+		VALUES (#{id}, #{email}, #{password}, #{gender}, #{age})
+	</insert>
+	
+	<delete id="removeMember"  parameterType="string">
+		DELETE FROM MEMBERS WHERE ID = #{id}
+	</delete>
+	
+	<update id="updateMember" parameterType="com.dailydate.web.vo.Member">
+		UPDATE MEMBERS SET Password=#{password}, Email=#{email} WHERE ID=#{id}
+	</update>
+	
+</mapper>

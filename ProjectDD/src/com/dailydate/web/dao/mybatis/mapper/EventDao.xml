@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dailydate.web.dao.EventDao">
+
+	<select id="searchEvents" parameterType="string" resultType="com.dailydate.web.vo.Event">
+		SELECT * FROM EVENTS WHERE NAME LIKE '%${value}%' ORDER BY LEN(CODE) DESC, CODE DESC
+	</select>
+	
+	<select id="getEvents" parameterType ="string" resultType="com.dailydate.web.vo.Event">
+		SELECT * FROM EVENTS ORDER BY LEN(CODE) DESC, CODE DESC
+		<!-- SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY STARTDATE DESC) NUM, EVENTS.* FROM EVENTS)M 
+		WHERE M.NUM BETWEEN 1 + (${value} - 1) * 10 AND 10 * ${value} -->
+	</select>
+
+	<select id="getEvent" parameterType="string" resultType="com.dailydate.web.vo.Event">
+		SELECT * FROM EVENTS WHERE CODE=#{code}
+	</select>
+	
+	<select id="getLastCode" resultType="String">
+		SELECT ISNULL(MAX(CAST(code as INT)),0) Code FROM EVENTS
+	</select>
+	
+	<insert id="addEvent" parameterType="com.dailydate.web.vo.Event">
+		<selectKey keyProperty="code" order="BEFORE" resultType="string">
+			SELECT ISNULL(MAX(CAST(CODE AS INT)),0)+1 CODE FROM EVENTS
+		</selectKey>
+		INSERT INTO EVENTS(
+			CODE,
+			NAME,
+			STARTDATE,
+			ENDDATE,
+			ADDRESS,
+			HOST,
+			HOSTCONTACT
+		)
+		VALUES(
+			#{code},
+			#{name},
+			CONVERT(DATE,#{startDate}),
+			CONVERT(DATE,#{endDate}),
+			#{address},
+			#{host},
+			#{hostContact}
+		)
+	</insert>
+	
+	<update id="updateEvent" parameterType="com.dailydate.web.vo.Event">
+		UPDATE EVENTS SET NAME=#{name},
+						  STARTDATE=#{startDate},
+						  ENDDATE=#{endDate},
+						  ADDRESS=#{address},
+						  HOST=#{host},
+						  HOSTCONTACT=#{hostContact}
+						WHERE CODE = #{code}
+	</update>
+	
+	<delete id="removeEvent" parameterType="string">
+		DELETE FROM EVENTS WHERE CODE=#{code}
+	</delete>
+</mapper>

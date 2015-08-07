@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+<!-- 분리시킨 영역들을 조립해주는 부분 -->
+  <definition name="home.*" template="/WEB-INF/view/inc/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+		<put-attribute name="body" value="/WEB-INF/view/{1}.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+  </definition>
+  
+  <definition name="community.*" template="/WEB-INF/view/community/inc/layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+    <put-attribute name="aside" value="/WEB-INF/view/community/inc/aside.jsp" />
+    <put-attribute name="body" value="/WEB-INF/view/community/{1}.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+  </definition>
+  
+  <definition name="joinus.*" template="/WEB-INF/view/joinus/inc/layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+    <put-attribute name="body" value="/WEB-INF/view/joinus/{1}.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+  </definition>
+  
+    <definition name="*.*" template="/WEB-INF/view/inc/layout.jsp">
+    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+    <put-attribute name="body" value="/WEB-INF/view/{1}/{2}.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+    
+  </definition>
+</tiles-definitions>

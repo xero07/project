@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dailydate.web.dao.PlaceDao">
+	<select id="getPlaces" parameterType="String" resultType="com.dailydate.web.vo.Place">
+		SELECT * FROM PLACES
+		<!-- SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM, PLACES.* FROM PLACES)M 
+        WHERE M.NUM BETWEEN 1 + (${value} - 1) * 10 AND 10 * ${value} -->
+	</select>
+	
+	<select id="getPlaceSearched" parameterType="String" resultType="com.dailydate.web.vo.Place">
+		SELECT * FROM PLACES WHERE NAME LIKE '%${value}%'
+	</select>
+	
+	<select id="getPlace" parameterType="String" resultType="com.dailydate.web.vo.Place">
+		SELECT * FROM PLACES WHERE CODE = #{code}
+	</select>
+	
+	<insert id="addPlace" parameterType="com.dailydate.web.vo.Place">
+		<selectKey keyProperty="code" order="BEFORE" resultType="string">
+			SELECT ISNULL(MAX(CAST(CODE AS INT)), 0)+1 CODE FROM PLACES
+		</selectKey>
+			INSERT INTO PLACES (
+								CODE,
+								NAME,
+								REGION,
+								THEME,
+								ADDRESS,
+								COST
+								)
+						VALUES(
+							   #{code},
+							   #{name},
+							   #{region},
+							   #{theme},
+							   #{address},					 
+							   ${cost}
+							   )
+	</insert>
+	
+	<update id="editPlace" parameterType="com.dailydate.web.vo.Place">
+		UPDATE PLACES SET NAME = #{name}, 
+						  REGION = #{region},
+						  THEME = #{theme},
+						  ADDRESS = #{address},
+						  COST = ${cost}
+					  WHERE CODE = #{code}	  
+	</update>
+	
+	<delete id="deletePlace" parameterType="String">
+		DELETE FROM PlACES WHERE CODE = #{code}
+	</delete>
+	
+	<select id="getLastCode"  resultType="string">
+		select isnull(max(cast(code as int)), 0) code from places
+	</select>
+</mapper>
+
+

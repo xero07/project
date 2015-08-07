@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dailydate.web.dao.RecoDao">
+
+   <select id="getRecommends" resultType="com.dailydate.web.vo.Recommend">
+      SELECT * FROM Recommends
+   </select>
+   
+   <select id="getRecommend" parameterType="string" resultType="com.dailydate.web.vo.Recommend">
+      SELECT * FROM Recommends WHERE CODE=#{code}
+   </select>
+   
+   <insert id="addRecommend" parameterType="com.dailydate.web.vo.Recommend">
+      <selectKey keyProperty="code" order="BEFORE" resultType="string">
+         select isnull(max(cast(code as int)),0)+1 code from Recommends
+      </selectKey>
+      INSERT INTO Recommends (code, region, title, content, memberId)
+      VALUES (#{code}, #{region}, #{title}, #{content}, #{memberId})
+   </insert>
+ <!-- 
+   <delete id="removeRecommend" parameterType="string">
+      DELETE FROM FREERecommendS WHERE RecommendCODE = #{code}
+   </delete>
+   
+   <update id="updateRecommend" parameterType="string">
+      UPDATE FREERecommendS SET Title=#{title}, Content=#{content}, Category=#{category} 
+      WHERE RecommendCode=#{code}
+   </update>
+   
+   <update id="hitsCount" parameterType="com.dailydate.web.vo.FreeRecommend">
+      UPDATE FREERecommendS SET Hits = Hits + 1 WHERE RecommendCode=#{code}
+   </update>  -->
+</mapper>

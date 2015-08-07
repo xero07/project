@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dailydate.web.dao.BoardDao">
+
+   <select id="getBoards" resultType="com.dailydate.web.vo.Board">
+      SELECT * FROM Boards
+   </select>
+   
+   <select id="getBoard" parameterType="string" resultType="com.dailydate.web.vo.Board">
+      SELECT * FROM Boards WHERE CODE=#{code}
+   </select>
+   
+   <insert id="addBoard" parameterType="com.dailydate.web.vo.Board">
+      <selectKey keyProperty="code" order="BEFORE" resultType="string">
+         select isnull(max(cast(code as int)),0)+1 code from Boards
+      </selectKey>
+      INSERT INTO Boards (code, subject, title, content, memberId)
+      VALUES (#{code}, #{subject}, #{title}, #{content}, #{memberId})
+   </insert>
+ <!-- 
+   <delete id="removeBoard" parameterType="string">
+      DELETE FROM FREEBOARDS WHERE BOARDCODE = #{code}
+   </delete>
+   
+   <update id="updateBoard" parameterType="string">
+      UPDATE FREEBOARDS SET Title=#{title}, Content=#{content}, Category=#{category} 
+      WHERE BoardCode=#{code}
+   </update>
+   
+   <update id="hitsCount" parameterType="com.dailydate.web.vo.FreeBoard">
+      UPDATE FREEBOARDS SET Hits = Hits + 1 WHERE BoardCode=#{code}
+   </update>  -->
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dailydate.web.dao.DiaryDao">
+	
+	<select id="getDiaries" resultType="com.dailydate.web.vo.Diary">
+		SELECT * FROM DIARYVIEW ORDER BY CODE DESC
+	</select>
+	
+	<select id="getDiary" parameterType="string" resultType="com.dailydate.web.vo.Diary">
+		SELECT * FROM DIARYVIEW WHERE CODE=#{code}
+	</select>
+	
+	<select id="getLastCode" resultType="string">
+		select isnull(max(cast(code as int)),0) code from COUPLEDIARIES
+	</select>
+
+	<insert id="addDiary" parameterType="com.dailydate.web.vo.Diary">
+		<selectKey keyProperty="code" order="BEFORE" resultType="string">
+			select isnull(max(cast(code as int)),0)+1 code from COUPLEDIARIES
+		</selectKey>
+		INSERT INTO COUPLEDIARIES (CODE, TITLE,MEMBERID, CONTENT, IMGCODE) 
+		VALUES (#{code}, #{title}, #{memberId}, #{content}, #{imgCode})
+	</insert>
+	
+	<delete id="removeDiary" parameterType="string">
+		DELETE FROM COUPLEDIARIES WHERE CODE=#{code}
+	</delete>
+	
+	
+	<update id="updateDiary" parameterType="com.dailydate.web.vo.Diary">
+		UPDATE COUPLEDIARIES SET CONTENT=#{content} 
+		WHERE CODE= #{code}
+	</update>
+
+</mapper>

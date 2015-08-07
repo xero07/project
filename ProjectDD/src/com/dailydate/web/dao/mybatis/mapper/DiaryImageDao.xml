@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dailydate.web.dao.DiaryImageDao">
+	
+	<select id="getDiaryImage" parameterType="string" resultType="com.dailydate.web.vo.DiaryImage">
+		SELECT * FROM DIARYIMAGES WHERE CODE=#{code}
+	</select>	
+
+	<insert id="addDiaryImage" parameterType="com.dailydate.web.vo.DiaryImage">
+		<selectKey keyProperty="code" order="BEFORE" resultType="string">
+			select isnull(max(cast(code as int)),0)+1 code from DIARYIMAGES
+		</selectKey>
+		INSERT INTO DIARYIMAGES (CODE, NAME, DIARYCODE) 
+		VALUES (#{code}, #{name}, #{diaryCode})
+	</insert>
+	
+	<select id="getDiaryImagesOfDiary" parameterType="string" resultType="com.dailydate.web.vo.DiaryImage">
+		SELECT * FROM DIARYIMAGES WHERE DIARYCode=#{diaryCode}
+	</select>
+	
+	<delete id="removeDiaryImage" parameterType="string">
+		DELETE DIARYIMAGES WHERE CODE=#{code}
+	</delete>
+	
+	<update id="updateDiaryImage" parameterType="com.dailydate.web.vo.DiaryImage">
+		UPDATE DIARYIMAGES SET NAME=#{name} 
+		WHERE CODE= #{code}
+	</update>
+</mapper>
