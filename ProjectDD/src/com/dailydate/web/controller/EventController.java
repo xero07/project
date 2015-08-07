@@ -24,17 +24,13 @@ import com.dailydate.web.dao.EventDao;
 import com.dailydate.web.vo.Event;
 
 @Controller
-@RequestMapping("/customer/*")
+@RequestMapping("/event/*")
 public class EventController {
 	private EventDao eventDao;
 	
 	@Autowired
 	public void setEventDao(EventDao eventDao) {
 		this.eventDao = eventDao;
-	}
-	@RequestMapping(value="test", method=RequestMethod.GET)
-	public String test(){
-		return "/customer/test.jsp";
 	}
 	//행사 검색
 	@RequestMapping("eventSearch")
@@ -44,7 +40,7 @@ public class EventController {
 
 		model.addAttribute("list", list);
 
-		return "/WEB-INF/view/customer/eventSearch.jsp";
+		return "event.eventSearch";
 	}
 	//체크박스 선택된 것 삭제
 	@RequestMapping(value="eventSearch", method=RequestMethod.POST)
@@ -64,7 +60,7 @@ public class EventController {
 
 		model.addAttribute("list", list);
 
-		return "/WEB-INF/view/customer/event.jsp";
+		return "event.event";
 	}
 	//체크박스 선택된 것 삭제
 	@RequestMapping(value="event", method=RequestMethod.POST)
@@ -88,7 +84,7 @@ public class EventController {
 	
 	@RequestMapping(value="eventReg", method=RequestMethod.GET)
 	public String eventReg(){
-		return "/WEB-INF/view/customer/eventReg.jsp";
+		return "event.eventReg";
 	}
 	@RequestMapping(value="eventReg", method=RequestMethod.POST)
 	public String eventReg(Model model, HttpServletRequest request, MultipartFile file) throws IOException{
@@ -155,7 +151,7 @@ public class EventController {
 
 		model.addAttribute("e",e);
 		
-		return "/WEB-INF/view/customer/eventDetail.jsp";
+		return "event.eventDetail";
 	}
 	
 	@RequestMapping(value="eventUpdate", method=RequestMethod.GET)
@@ -164,7 +160,7 @@ public class EventController {
 		
 		model.addAttribute("e", e);
 		
-		return "/WEB-INF/view/customer/eventUpdate.jsp";
+		return "event.eventUpdate";
 	}
 	@RequestMapping(value="eventUpdate", method=RequestMethod.POST)
 	public String eventUpdate(Event event, HttpServletRequest request){
