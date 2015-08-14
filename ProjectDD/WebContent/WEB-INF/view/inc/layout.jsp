@@ -11,9 +11,24 @@
 <head>
 <meta charset="UTF-8">
 <title>DailyDate</title>
-<link href="${ctxName }/resource/css/base.css" rel="stylesheet" type="text/css" />
+<link href="${ctxName }/resource/css/layout.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+	state=false;
+	$(document).ready(function(){
+		$("#mem-id").click(function(){
+			if(state==false){
+				$("#box-info").show();
+				state=true;
+			}
+			else{
+				$("#box-info").hide();
+				state=false;
+			}
+		});
+	});
+</script>
 </head>
 <body> 
 	<!-- 헤더 영역 -->

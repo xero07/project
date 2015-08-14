@@ -94,7 +94,7 @@ public class PlaceController
 		String name = request.getParameter("name");
 		String region = request.getParameter("region");
 		String theme  = request.getParameter("theme");
-		String address = request.getParameter("address");
+		String address = request.getParameter("address")+","+request.getParameter("address_etc");
 		int cost =Integer.parseInt(request.getParameter("cost"));
 		
 		place.setName(name);

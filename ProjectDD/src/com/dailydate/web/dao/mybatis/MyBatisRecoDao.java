@@ -32,15 +32,15 @@ public class MyBatisRecoDao implements RecoDao {
 	public int addRecommend(Recommend recommend) {
 		 
 	      int result = 0;
-	         try{
-	        	RecoDao dao = session.getMapper(RecoDao.class);
-	            result = dao.addRecommend(recommend);
+	      RecoDao dao = session.getMapper(RecoDao.class);
+	      result = dao.addRecommend(recommend);
+	        /* try{
 	            session.commit();
 	         }
 	         finally{
 	            session.rollback();
 	            session.close();
-	         }
+	         }*/
 	         return result;
 	}
 

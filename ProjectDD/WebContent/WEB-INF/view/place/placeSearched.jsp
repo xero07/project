@@ -31,7 +31,7 @@
 			 	<td>${p.theme}</td>
 			 	<td>${p.address}</td>
 			 	<td>${p.cost}</td>
-			 	<td>${p.regDate}</td>
+			 	<td><fmt:formatDate value="${p.regDate}" pattern="yyyy-MM-dd" /></td>
 			 	<td>${p.starRating}</td>
 			 	<td>${p.adminId}</td>
 			 </tr>

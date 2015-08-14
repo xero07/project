@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.dailydate.web.dao.PlaceDao">
 	<select id="getPlaces" parameterType="String" resultType="com.dailydate.web.vo.Place">
-		SELECT * FROM PLACES
+		SELECT * FROM PLACES order by code DESC
 		<!-- SELECT * FROM (SELECT ROW_NUMBER() OVER (ORDER BY REGDATE DESC) NUM, PLACES.* FROM PLACES)M 
         WHERE M.NUM BETWEEN 1 + (${value} - 1) * 10 AND 10 * ${value} -->
 	</select>

@@ -14,18 +14,41 @@
 			<div id="top">
 				<h1 class="hidden">회원메뉴</h1>
 				<ul id="loginmenu">
+	               <c:if test="${not empty pageContext.request.userPrincipal.name}">
+					<li>
+	               <security:authorize ifAnyGranted="ROLE_ADMIN">
+	                  <a href="${ctxName}/joinus/adminMember">관리자</a>
+	               </security:authorize>
+	               </li>
+	               </c:if>
 					<c:if test="${empty pageContext.request.userPrincipal.name}">
 					<li><a href="${ctxName}/joinus/join">JoinUs</a></li> 
 					<li>&nbsp;
                  	 <a href="${ctxName}/joinus/login">Login</a></li>
                		</c:if>
                		<c:if test="${not empty pageContext.request.userPrincipal.name}">   
-               		<li><a href="">${m.id }</a></li> 
-                  	<li><a href="${ctxName}/j_spring_security_logout">${pageContext.request.userPrincipal.name}　LOGOUT</a></li>
+               		<li>
+               			<a href="#" id="mem-id">
+               				${pageContext.request.userPrincipal.name}
+               			</a>
+               			<div id="box-info">
+               				<table>
+               					<tr>
+               					<td rowspan="3"><img src="${ctxName}/resource/images/test.png"/></td>
+               					<td>${pageContext.request.userPrincipal.name}</td></tr>
+               					<tr><td><input type="button" value="회원정보수정"/></td></tr>
+               					<tr><td><input type="button" value="커플맺기"/></td></tr>
+               				</table>
+               				<a href="">스크랩장소</a>　　
+               				<a href="">좋아요 코스</a>　　
+               				<a href="">내 코스</a>
+               			</div>
+               		</li> 
+                  	<li><a href="${ctxName}/j_spring_security_logout">Logout</a></li>
                		</c:if>  
 					<li>
 						<input type="text"/>&nbsp;
-						<input type="submit" value="검색" class="button zoom-button"/>
+						<input type="submit" value="검색" class="button-search zoom-button"/>
 					</li> 
 				</ul>
 			</div>

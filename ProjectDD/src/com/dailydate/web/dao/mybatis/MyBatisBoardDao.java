@@ -33,15 +33,16 @@ public class MyBatisBoardDao implements BoardDao{
 	public int addBoard(Board board) {
 		 
 	      int result = 0;
-	         try{
-	            BoardDao dao = session.getMapper(BoardDao.class);
-	            result = dao.addBoard(board);
+	      BoardDao dao = session.getMapper(BoardDao.class);
+	      
+	      result = dao.addBoard(board);
+	      /*   try{
 	            session.commit();
 	         }
 	         finally{
 	            session.rollback();
 	            session.close();
-	         }
+	         }*/
 	         return result;
 	}
 

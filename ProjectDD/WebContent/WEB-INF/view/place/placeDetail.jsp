@@ -65,23 +65,20 @@
 	
 	<form method="POST" action="placeCommentAdd" enctype="multipart/form-data">
 		<fieldset>
-			<dt>placeCode</dt>
-			<dd><input name="placeCode" value="${p.code}"></dd>
-			<dt>MemberId</dt>
-			<dd><security:authentication property="name"/></dl>
-			<dt>content</dt>
-			<dd><input name="content"></dl>
-												
-			<div><input type="submit" value="등록"></div>
+			<security:authentication property="name"/>
+			<input name="content"> 	
+			<input type="submit" value="등록">
 		</fieldset>
 	</form>	
 	 	
- 	<form method="POST" action="placeDelete?c=${p.code}">
- 		<input type="submit" value="삭제">
- 	</form>
- 	<%-- <form method="GET" action="placeEdit?c=${p.code}">
- 		<input type="submit" value="수정"> --%>
- 	<a href="placeEdit?c=${p.code}">수정</a>
- 	<a href="place">목록</a>
- 	
+	<div> 	
+		<h1 class="hidden">버튼 목록</h1>
+	 	<form method="POST" action="placeDelete?c=${p.code}">
+	 		<input type="submit" value="삭제">
+	 	</form>
+	 	<%-- <form method="GET" action="placeEdit?c=${p.code}">
+	 		<input type="submit" value="수정"> --%>
+	 	<a href="placeEdit?c=${p.code}">수정</a>
+	 	<a href="place">목록</a>
+ 	</div>
 </div>

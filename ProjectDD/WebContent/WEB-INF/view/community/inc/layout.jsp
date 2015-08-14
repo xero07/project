@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8">
 <title>자유게시판</title>
-<link href="${ctxName }/resource/css/base.css" rel="stylesheet" type="text/css" />
+<link href="${ctxName }/resource/css/board.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
 
 </head>

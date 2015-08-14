@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(reset.css);
 
 a{ text-decoration: none; }
 
@@ -11,12 +12,15 @@ a{ text-decoration: none; }
 #footer {
 	padding-top: 20px;
 	color: #fff;
-}
-
-#footer {
 	height: 100px;
 	background: #787878;
 	clear: inherit;
+}
+
+#main {
+	height: inherit;
+	width: 80%;
+	right: 10px;
 }
 
 #logo {
@@ -26,8 +30,10 @@ a{ text-decoration: none; }
 }
 
 #top {
+	width:100%;
 	height: 25px;
 	background: #787878;
+	overflow: auto;
 }
 
 #top input {
@@ -54,7 +60,7 @@ a{ text-decoration: none; }
 }
 
 #loginmenu {
-	margin-left: 950px;
+	margin-left: 900px; 
 	padding-top: 5px;
 	padding-left: 10px;
 }
@@ -84,6 +90,70 @@ a{ text-decoration: none; }
 	color: #ffffff;
 }
 
+#box-info{
+	width: 269px;
+	height: 261px;
+	background: url("../images/bgMemInfo.png") no-repeat center;
+	position: absolute;
+	top: 20px;
+	right: 270px;
+	display: none;
+	text-align: center;
+}
+
+#box-info a{
+	color: #000;
+}
+
+#box-info table{
+	color: #000;
+	font-size: 14px;
+	height: 120px;
+	margin-top: 40px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+}
+
+#box-info td:FIRST-CHILD{
+	width: 110px;
+}
+
+#box-info td:FIRST-CHILD+td{
+	width: 110px;
+}
+
+#box-info img{
+	width:100px;
+	height:100px;
+}
+
+.content-wrapper
+{
+	height: 100%;
+	width:100%;
+	min-height: inherit;
+	margin-left:auto;
+	margin-right:auto;
+}	
+
+#body .content-wrapper{
+	width: 96%;
+	height: 700px;
+}
+
+#footer .content-wrapper{
+	width: 96%;
+}
+	
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
 .hidden {
 	display: none !important;
 }
@@ -92,23 +162,63 @@ a{ text-decoration: none; }
 	display: inline-block;
 }
 
-	
 /*----------------------- 버튼이라는 공통분모 -----------------------------------*/
-	.button
-	{
-	   display:inline-block;
-	   overflow:hidden; /* block으로 지정하면 overflow(content가 영역밖에존재) 발생가능 */
-	   border:0px;
-	   text-indent:-100px;
-	}
-	.btn:hover, .button:hover
-	{
-	   cursor:pointer;
-	}
-	.zoom-button
-	{
-		width: 20px;
-		height: 20px;
-		background: url("../images/btnSearch.png") no-repeat center;
-	}
-	
+.button-search {
+	display: inline-block;
+	overflow: hidden; /* block으로 지정하면 overflow(content가 영역밖에존재) 발생가능 */
+	border: 0px;
+	text-indent: -100px;
+} 
+.btn:hover, .button:hover {
+	cursor: pointer;
+}
+
+.zoom-button {
+	width: 20px;
+	height: 20px;
+	background: url("../images/btnSearch.png") no-repeat;
+}
+
+/* ---------페이지------------------------------------------------------------------- */
+.list_number{
+	padding-top:25px; text-align:center;
+}
+
+.list_n_menu {
+	padding: 3px;
+	MARGIN: 3px;
+	TEXT-ALIGN: center
+}
+
+.list_n_menu A {
+	padding: 5px 8px 4px 8px;
+	MARGIN: 2px;
+	BORDER: #ccc 1px solid;
+	COLOR: #999;
+	TEXT-DECORATION: none
+}
+
+.list_n_menu A:hover {
+	BORDER: #999 1px solid;
+	COLOR: #666;
+}
+
+.list_n_menu A:active {
+	BORDER: #999 1px solid;
+	COLOR: #666;
+}
+
+.list_n_menu .current {
+	BORDER: #117bff 1px solid;
+	padding: 5px 8px 4px 8px;
+	FONT-WEIGHT: bold;
+	MARGIN: 2px;
+	COLOR: #036cb4;
+}
+
+.list_n_menu .disabled {
+	BORDER: #eee 1px solid;
+	padding: 5px 8px 4px 8px;
+	MARGIN: 2px;
+	COLOR: #ddd;
+}

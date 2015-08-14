@@ -4,14 +4,17 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
  
 	<div id="content">
+	
+	<div id="search">
 	<form action="placeSearched" method="get">
 		<input type="text"  name="c" />
 		<input type="submit" value="검색" />
 	</form>
+	</div>
 	
 	<div class="list-table">
 	<form method="post">
-		<table>
+		<table align="center">
 			<thead>
 				 <tr>
 				 	<td></td>
@@ -45,28 +48,20 @@
 				</tbody>
 			</c:forEach>
 		</table>
-		<input type="submit" value="삭제" />
-		<a href="placeReg">등록</a>
+		<p>
+			<input type="submit" value="삭제" />
+			<a href="placeReg">등록</a>
+		</p>
 	</form>
 	</div>
-	<nav id="pager">
-	<ul>
-		<li>
-			<a href="place?n=1">1</a>
-		</li>
-		<li>
-			<a href="place?n=2">2</a>
-		</li>
-		<li>
-			<a href="">3</a>
-		</li>
-		<li>
-			<a href="">4</a>
-		</li>
-		<li>
-			<a href="">5</a>
-		</li>
-	</ul>
-	</nav>
+	<div class="list_number">
+			<p>
+			<div class="list_n_menu">
+				<span class="disabled">< 이전</span><span class="current">1</span><a
+					href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a
+					href="#?page=5">5</a><a href="#?page=2">다음 ></a>
+			</div>
+			</p>
+	</div>
 	</div>
 	
