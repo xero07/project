@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 @import url("layout.css");
-
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 /*------------------- 테이블 디자인 설정 -----------------------------*/
 .list-table{
 	
@@ -92,9 +92,206 @@
 }
 
 /*----------------------- 상세페이지 스타일  ------------------------------------*/
+#place-div img{
+	margin-top:30px;
+	margin-bottom:-10px;
+	width:1200px;
+}
+#place-detail-img{
+	float:left;
+	width:400px;
+	height: 300px;
+}
+table{
+	margin-top: 10px;
+}
+#place-main-img img{
+	height:300px; 
+	width:350px;
+	margin-right: 5px;
+}
+#place-side-img img{
+	height: 95px;
+	width: 95px;
+}
 
-.detail img{
+#place-detail-info{
+	FONT-FAMILY: 'Jeju Gothic', serif;
+	margin-left:500px;
+	height:320px;
+	width: 350px;
+}
+#place-title{
+	font-size: 18pt;
+}
+
+/* 댓글 입력폼 */
+#comment-form{
+	margin-left:20px;
+	margin-top:20px;
+	width: 1200px;
+	height: 40px;	
+	margin-bottom:20px;
+}
+#comment-submit{
+	font-size:13px;
+	font-family:'Jeju Gothic', serif;
+	margin-left:750px;
+	clear:both;
+	position:absolute;
+	border:1px solid #FF698C;
+	color:white;
+	background-color:#FF698C;
+	height: 30px;
+	width: 80px;
+}
+#comment-content{
+	border:1px solid #FF698C;
+	padding-left:10px;
+	font-size:11pt;
+	clear:both;
+	position:absolute;
+	height:28px;
+	width: 740px;
+}
+
+#member-id{
+	margin-left:20px;
+	font-family:'Jeju Gothic', serif;
+	float:left;
+	font-size:15pt;
+}
+
+
+/* 별점 */
+.rateit {
+	margin-left:20px;
+	margin-right:20px;
+    display: -moz-inline-box;
+    display: inline-block;
+    position: relative;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.rateit .rateit-range
+{
+    position: relative;
+    display: -moz-inline-box;
+    display: inline-block;
+    background: url("../images/star.gif");
+    height: 36px;
+    outline: none;
+}
+
+.rateit .rateit-range * {
+    display:block;
+}
+
+/* for IE 6 */
+* html .rateit, * html .rateit .rateit-range
+{
+    display: inline;
+}
+
+/* for IE 7 */
+* + html .rateit, * + html .rateit .rateit-range
+{
+    display: inline;
+}
+
+.rateit .rateit-hover, .rateit .rateit-selected
+{
+    position: absolute;
+    left: 0px;
+}
+
+.rateit .rateit-hover-rtl, .rateit .rateit-selected-rtl
+{
+    left: auto;
+    right: 0px;
+}
+
+.rateit .rateit-hover
+{
+    background: url("../images/star.gif") left -48px;
+}
+
+.rateit .rateit-hover-rtl
+{
+    background-position: right -48px;
+}
+
+.rateit .rateit-selected
+{
+    background: url("../images/star.gif") left -24px;
+}
+
+.rateit .rateit-selected-rtl
+{
+    background-position: right -24px;
+}
+
+.rateit .rateit-preset
+{
+    background: url("../images/star.gif") left -72px;
+}
+
+.rateit .rateit-preset-rtl
+{
+    background: url("../images/star.gif") left -72px;
+}
+
+.rateit button.rateit-reset
+{
+    background: url("../images/delete.gif") 0 0;
+    width: 16px;
+    height: 16px;
+    display: -moz-inline-box;
+    display: inline-block;
+    float: left;
+    outline: none;
+    border:none;
+    padding: 0;
+}
+
+.rateit button.rateit-reset:hover, .rateit button.rateit-reset:focus
+{
+    background-position: 0 -16px;
+}
+/* ----------------------------댓글 목록------------------------- */
+#hidden{
+	visibility: hidden;
+}
+#comment-list table{
+	text-align:left;
+	font-size:10pt;
+	height:30px;
+	border-bottom: 1px dashed #ffb7c7 ;
+	width: 1200px;
+}
+#comment-list-id{
 	width: 200px;
-	height: 200px;
-	margin-top: 40px;
+} 
+#comment-list-star{
+	width: 300px;
+}
+#comment-list-content{
+	width: 1200px;
+}
+#comment-list-regdate{
+	width: 400px;
+}
+/* ----------------------------------댓글 수-------------------------------------- */
+#cmt-count{
+
+	font-family:'Jeju Gothic', serif;
+	font-size: 11pt;
+	color:#5d5d5d;
+
 }

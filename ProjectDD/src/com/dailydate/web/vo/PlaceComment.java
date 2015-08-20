@@ -44,6 +44,13 @@ public class PlaceComment {
 	}
 	public void setStarRating(int starRating) {
 		this.starRating = starRating;
+<<<<<<< HEAD
 	}	
+=======
+	}
+
+	
+	
+>>>>>>> branch 'master' of https://github.com/xero07/project.git
 
 }
