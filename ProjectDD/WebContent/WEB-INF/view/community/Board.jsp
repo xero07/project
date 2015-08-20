@@ -7,7 +7,8 @@
 		<h1 class="hidden">자유게시판</h1>
 		<div class="button">
 			<h1 class="hidden">글쓰기 버튼</h1>
-			<a href="BoardReg"><img src="${ctxName}/resource/images/bgRegButton.png"/></a>
+			<!-- <a href="BoardReg" class="button">글쓰기</a> -->
+			 <a href="BoardReg"><input type="button" value="글쓰기" class="btn-simple"/></a>
 		</div>
 		<div class="list-table">
 			<h1 class="hidden">자유게시판 목록</h1>
@@ -72,7 +73,7 @@
 						<option>닉네임</option>
 					</select> 
 					<input type="text" name="search" /> 
-					<input type="submit" value="검색" class="button"/>
+					<input type="submit" value="검색" class="btn-search"/>
 				</fieldset>
 			</form>
 		</div>	

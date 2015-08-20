@@ -40,7 +40,7 @@ public class DiaryController {
 	}
 
 	@RequestMapping("diary")
-	public String diary(Model model) {
+	public String diary(Model model, String c) {
 
 		List<Diary> list = diaryDao.getDiaries();
 		model.addAttribute("list", list);

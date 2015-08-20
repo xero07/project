@@ -62,14 +62,18 @@
 	</table>
 	
 	
-	
 	<form method="POST" action="placeCommentAdd" enctype="multipart/form-data">
-		<fieldset>
-			<security:authentication property="name"/>
-			<input name="content"> 	
-			<input type="submit" value="등록">
-		</fieldset>
-	</form>	
+      <fieldset>
+         <dt class="hidden">placeCode</dt>
+         <dd><input name="placeCode" value="${p.code}"></dd>
+         <dt>MemberId</dt>
+         <dd><security:authentication property="name"/></dl>
+         <dt>내용</dt>
+         <dd><input name="content"></dl>
+                                    
+         <div><input type="submit" value="등록"></div>
+      </fieldset>
+   </form>   
 	 	
 	<div> 	
 		<h1 class="hidden">버튼 목록</h1>

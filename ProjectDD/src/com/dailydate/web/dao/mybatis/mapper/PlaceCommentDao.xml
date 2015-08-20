@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.dailydate.web.dao.PlaceCommentDao">
 	<select id="getPlaceComments" parameterType="String" resultType="com.dailydate.web.vo.PlaceComment">
-		SELECT * FROM PLACECOMMENTS WHERE PLACECODE = #{placeCode}
+		SELECT * FROM PLACECOMMENTS WHERE PLACECODE = #{placeCode} order by LEN(CODE) DESC, CODE DESC
 	</select>
 	
 	<insert id="addPlaceComment" parameterType="com.dailydate.web.vo.PlaceComment">
@@ -15,12 +15,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO PLACECOMMENTS (
 							CODE,
 							MEMBERID,
+							starRating,
 							PLACECODE,
 							CONTENT
 							)
 					VALUES(
 						   #{code},
 						   #{memberId},
+						   #{starRating},
 						   #{placeCode},
 						   #{content}
 						   )

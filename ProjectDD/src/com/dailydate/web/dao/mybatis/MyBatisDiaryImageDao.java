@@ -40,7 +40,8 @@ public class MyBatisDiaryImageDao implements DiaryImageDao {
 
 	@Override
 	public List<DiaryImage> getDiaryImagesOfDiary(String code) {
-		DiaryImageDao dao = (DiaryImageDao) session.getMapper(DiaryImageDao.class);
+		DiaryImageDao dao = (DiaryImageDao) session
+				.getMapper(DiaryImageDao.class);
 		List<DiaryImage> list = dao.getDiaryImagesOfDiary(code);
 
 		return list;
@@ -52,5 +53,22 @@ public class MyBatisDiaryImageDao implements DiaryImageDao {
 		DiaryImageDao dao = session.getMapper(DiaryImageDao.class);
 
 		return dao.getDiaryImage(code);
+	}
+
+	@Override
+	public List<DiaryImage> getDiaryImages(int page, String field, String query) {
+		DiaryImageDao dao = session.getMapper(DiaryImageDao.class);
+
+		return dao.getDiaryImages(1, "Title", "");
+	}
+
+	@Override
+	public List<DiaryImage> getDiaryImages(int page) {
+		return getDiaryImages(page, "Title", "");
+	}
+
+	@Override
+	public List<DiaryImage> getDiaryImages() {
+		return getDiaryImages(1, "Title", "");
 	}
 }

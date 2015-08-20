@@ -14,27 +14,29 @@
 				<fieldset>
 					<table>
 						<tr>
-							<dt>제목</dt>
-							<dd>
+							<th>제목 : </th>
+							<td>
 								<input name="title" type="text" />
-							</dd>
+							</td>
 						</tr>
 						<tr>
-							<dt>이미지</dt>
-							<dd>
+							<th>이미지 : </th>
+							<td>
 								<input type="file" multiple name="file">
-							</dd>
+							</td>
 						</tr>
 						<tr>
-							<dt>내용</dt>
-							<dd>
+							<th>내용 : </th>
+							<td>
 								<textarea cols="40" rows="20" name="content"></textarea>
-							</dd>
+							</td>
 						</tr>
 					</table>
 				</fieldset>
 				<div>
-					<input type="submit" value="등록" /> <a href="diary">취소</a> <a href="diary">목록</a>
+					<input type="submit" value="등록" class="btn-simple"/> 
+					<a href="diary"><input type="button" value="취소" class="btn-simple"/></a> 
+					<a href="diary"><input type="button" value="목록" class="btn-simple"/></a>
 				</div>
 			</form>
 		</section>

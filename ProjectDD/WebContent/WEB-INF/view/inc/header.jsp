@@ -42,7 +42,7 @@
                				<a href="">스크랩장소</a>　　
                				<a href="">좋아요 코스</a>　　
                				<a href="">내 코스</a>
-               			</div>
+               			</div> 
                		</li> 
                   	<li><a href="${ctxName}/j_spring_security_logout">Logout</a></li>
                		</c:if>  

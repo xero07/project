@@ -32,8 +32,8 @@
 				</tbody>
 			</table>
 			<p>
-				<input type="submit" value="등록" class="btn"/>
-				<a href="Board" class="btn">취소</a>
+				<input type="submit" value="등록" class="btn-simple"/>
+				<a href="Board"><input type="button" value="취소" class="btn-simple"/></a>
 			</p>			
 			</form>
 		</section>

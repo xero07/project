@@ -39,8 +39,7 @@
 }
 
 #body .content-wrapper {
-	margin-top: 10px;
-	height: 700px;
+	overflow-y: hidden;
 }
 
 #radio {
@@ -55,13 +54,12 @@
 }
 
 .search {
-	position: relative;
-	margin-left: -280px;
-	left: 50%;
+	margin-left: 270px;
 	width: 420px;
 	height: 25px;
+	line-height: 25px;
 	text-align: center;
-	margin-top: 5px;
+	margin-top: 25px;
 }
 
 .button{
@@ -69,11 +67,6 @@
 	margin-right: 120px;	
 	margin-top: 20px;
 	margin-bottom: 10px;
-}
-
-.button img{
-	width: 70px;
-	height: 25px;
 }
 
 
@@ -136,7 +129,7 @@
 	text-align: center;
 	font-weight: bold;
 	width: 150px;
-	background: #c0c0c0;
+	background: #cacaca;
 	border-bottom: 1px solid #fff;
 }
 

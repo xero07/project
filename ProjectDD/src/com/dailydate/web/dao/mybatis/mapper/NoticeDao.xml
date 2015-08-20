@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.dailydate.web.dao.NoticeDao">
 
    <select id="getNotices" resultType="com.dailydate.web.vo.Notice">
-      SELECT * FROM Notices
+      SELECT * FROM Notices order by LEN(CODE) DESC, CODE DESC
    </select>
    
    <select id="getNotice" parameterType="string" resultType="com.dailydate.web.vo.Notice">

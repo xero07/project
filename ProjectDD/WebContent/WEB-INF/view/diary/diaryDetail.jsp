@@ -6,51 +6,41 @@
 <c:set var="ctxName" value="${pageContext.request.contextPath }" />
 
 
-	<section id="content">
+	<div id="content">
 		<h1 class="hidden">커플일기</h1>
 
-		<section class="detail">
+		<div id="detail-diary">
 			<h1 class="hidden">일기내용</h1>
 
-			<table>
+			<table align="right">
 				<tr>
-					<dt class="hidden">제목</dt>
-					<dd class="detail-title">${d.title}</dd>
+					<th class="hidden">제목</th>
+					<td id="detail-title">"${d.title}"</td>
 				</tr>
-				
+
 				<tr>
-					<dt class="hidden">작성자</dt>
-					<dd class="detail-id">${d.memberId}</dd>
-				</tr>
-				
-				<tr>
-					<dt class="hidden">등록일</dt>
-					<dd class="detail-date"><fmt:formatDate value="${d.regDate}" pattern="yyyy-MM-dd" /></dd>
+					<th class="hidden">등록일</th>
+					<td id="detail-date"><fmt:formatDate value="${d.regDate}" pattern="yyyy년 MM월 dd일 " /></td>
 				</tr>
 				<tr>
-					<dt class="hidden">이미지</dt>
-					<dd><img src="${ctxName}/resource/upload/diary/${di.name}" /></dd>
+					<th class="hidden">이미지</th>
+					<td id="detail-img" ><img src="${ctxName}/resource/upload/diary/${di.name}" align="middle"/></td>
 				</tr>
 				<tr>
-					<dt class="hidden">내용</dt>
-					<dd class="detail-content">${d.content}</dd>
+					<th class="hidden">내용</th>
+					<td id="detail-content">${d.content}</td>
 				</tr>
 			</table>
-		</section>
+		</div>
 
-		<section>
+		<div id="detail-btn">
 			<h1 class="hidden">버튼</h1>
 			<form method="post" action="diaryDelete?c=${d.code}">
-				<input type="submit" value="삭제" >
-				<a href="diaryUdtReg?c=${d.code}">수정</a>
-				<a href="diary">목록</a>
-				<!-- <input type="button" value="수정" /> <input type="button" value="목록" /> -->
-				<!-- <a href="diary">삭제</a> -->
+				<input type="submit" value="삭제" class="btn-simple"/>
 			</form>
-			<%-- <form method="post" action="diaryUpdate?c=${d.code}">
-				<input type="submit" value="수정">
-			</form> --%>
-		</section>
+				<a href="diaryUdtReg?c=${d.code}"><input type="button" value="수정" class="btn-simple"/></a>
+				<a href="diary"><input type="button" value="목록" class="btn-simple"/></a>
+		</div>
 
-	</section>
+	</div>
 	

@@ -9,17 +9,16 @@ public class Diary {
 	private String content; // 내용
 	private String memberId; // 작성자 ID(fk)
 	private Date regDate; // 등록일
-	private String imgCode;
+	private String imgName;
 	private List<DiaryImage> images;
 	
-	
-	
-	public String getImgCode() {
-		return imgCode;
+
+	public String getImgName() {
+		return imgName;
 	}
 
-	public void setImgCode(String imgCode) {
-		this.imgCode = imgCode;
+	public void setImgName(String imgName) {
+		this.imgName = imgName;
 	}
 
 	public List<DiaryImage> getImages() {

@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.dailydate.web.dao.RecoDao">
 
    <select id="getRecommends" resultType="com.dailydate.web.vo.Recommend">
-      SELECT * FROM Recommends order by code DESC
+      SELECT * FROM Recommends order by LEN(CODE) DESC, CODE DESC
    </select>
    
    <select id="getRecommend" parameterType="string" resultType="com.dailydate.web.vo.Recommend">

@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.dailydate.web.dao.BoardDao">
 
    <select id="getBoards" resultType="com.dailydate.web.vo.Board">
-      SELECT * FROM Boards order by code DESC
+      SELECT * FROM Boards order by LEN(CODE) DESC, CODE DESC
    </select>
    
    <select id="getBoard" parameterType="string" resultType="com.dailydate.web.vo.Board">

@@ -181,8 +181,8 @@ public class PlaceController
 	
 	@RequestMapping(value ="placeCommentAdd", method = RequestMethod.POST )
 	public String placeCommentAdd(PlaceComment placeComment, HttpServletRequest request,
-			Principal principal)
-	{
+			Principal principal, Model model)
+	{	
 		String placeCode = request.getParameter("placeCode");
 		String memberId = principal.getName();
 		String content = request.getParameter("content");
@@ -193,7 +193,7 @@ public class PlaceController
 		
 		placeCommentDao.addPlaceComment(placeComment);
 		
-		return "redirect:place";
+		return placeDetail(placeCode, model);
 	}
 	
 	@RequestMapping(value = "placeSearched", method = RequestMethod.GET)

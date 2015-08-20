@@ -13,7 +13,8 @@
 <title>자유게시판</title>
 <link href="${ctxName }/resource/css/board.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="${ctxName }/resource/js/modernizr.js"></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="${ctxName }/resource/js/subBox.js"></script>
 </head>
 <body> 
 	<!-- 헤더 영역 -->

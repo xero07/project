@@ -6,7 +6,7 @@ public class PlaceComment {
 	private String placeCode;
 	private String regDate;
 	private String content;
-	private String starRating;
+	private int starRating;
 	
 	public String getCode() {
 		return code;
@@ -39,13 +39,11 @@ public class PlaceComment {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getStarRating() {
+	public int getStarRating() {
 		return starRating;
 	}
-	public void setStarRating(String starRating) {
+	public void setStarRating(int starRating) {
 		this.starRating = starRating;
-	}
-	
-	
+	}	
 
 }
