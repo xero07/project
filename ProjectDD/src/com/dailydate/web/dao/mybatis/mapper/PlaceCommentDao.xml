@@ -15,12 +15,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO PLACECOMMENTS (
 							CODE,
 							MEMBERID,
+							starRating,
 							PLACECODE,
 							CONTENT
 							)
 					VALUES(
 						   #{code},
 						   #{memberId},
+						   #{starRating},
 						   #{placeCode},
 						   #{content}
 						   )

@@ -14,7 +14,7 @@ a{ text-decoration: none; }
 	color: #fff;
 	height: 100px;
 	background: #787878;
-	clear: inherit;
+	clear: both;
 }
 
 #main {
@@ -138,7 +138,8 @@ a{ text-decoration: none; }
 
 #body .content-wrapper{
 	width: 96%;
-	height: 700px;
+	height: 1500px;
+	overflow:hidden;
 }
 
 #footer .content-wrapper{
