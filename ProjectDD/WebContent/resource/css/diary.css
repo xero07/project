@@ -8,9 +8,11 @@
 }
 
 #body .content-wrapper {
+	width: 96%;
 	margin-top: 10px;
 	margin-left: 10px;
 }
+
 
 .diary-menu {
 	width: 150px;
@@ -110,29 +112,66 @@ a {
 	color: #000;
 }
 
+
 /*------------------- 테이블 디자인 설정 -----------------------------*/
-.reg-table table {
-	
+.filebox{
+	padding-left: 20px;
 }
 
-.reg-table th {
-	text-align: center;
-	width: 100px;
-	height: 20px;
+.filebox label {
+  display: inline-block;
+  padding: .5em .75em;
+  color: #999;
+  font-size: 12px;
+  line-height: normal;
+  vertical-align: middle;
+  background-color: #ffffff;
+  cursor: pointer;
+  border: 1px solid #ebebeb;
+  border-bottom-color: #e2e2e2;
+  border-radius: .25em;
+}
+
+.filebox input[type="file"] {  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+.reg-table table {
+	margin-top: 50px;
+	margin-bottom: 10px;
 }
 
 .reg-table td {
 	height: 25px;
+	line-height: 25px;
+	padding: 5px;
 }
 
 .reg-table input[type="text"] {
-	width: 410px;
-	height: 25px;
+	width: 415px;
+	height: 20px;
 }
 
-.reg-table p {
-	
+#reg-file *{
+	float:left;
 }
+
+#today{
+	font-weight: bold;
+	font-size: 18px;
+	color: #808080;
+}
+
+#reg-btn{
+	text-align: center;
+}
+
 
 /*----------------------- 상세페이지 스타일  ------------------------------------*/
 #detail-diary{

@@ -39,6 +39,7 @@
 }
 
 #body .content-wrapper {
+	width: 96%;
 	overflow-y: hidden;
 }
 
@@ -122,15 +123,9 @@
 }
 
 .reg-table table {
+	margin-top: 50px;
+	margin-bottom: 20px;
 	
-}
-
-.reg-table th {
-	text-align: center;
-	font-weight: bold;
-	width: 150px;
-	background: #cacaca;
-	border-bottom: 1px solid #fff;
 }
 
 .reg-table td {
@@ -140,9 +135,13 @@
 	
 }
 
+.reg-table select{
+	width: 80px;
+}
+
 .reg-table input[type="text"] {
-	width: 410px;
-	height: 25px;
+	width: 490px;
+	height: 20px;
 }
 
 .reg-table p {

@@ -13,7 +13,6 @@
 			<table align="center">
 			<tbody>
 				<tr>
-					<th>말머리</th>
 					<td>
 						<select name="subject">
 						<option value="수다">수다</option>
@@ -22,12 +21,10 @@
 					</td>
 				</tr>
 				<tr>
-					<th>제목</th>
 					<td><input type="text" name="title"/></td>
 				</tr>
 				<tr>
-					<th>내용</th>
-					<td><textarea rows="20" cols="50" name="content"></textarea></td>
+					<td><textarea rows="20" cols="60" name="content"></textarea></td>
 				</tr>
 				</tbody>
 			</table>

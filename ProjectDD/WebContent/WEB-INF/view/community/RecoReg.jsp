@@ -13,28 +13,25 @@
 			<table align="center">
 			<tbody>
 				<tr>
-					<th>추천 장소명</th>
 					<td><input type="text" name="title" /></td>
 				</tr>
 				<tr>
-					<th>지역</th>
 					<td>
+						지역 : 
 						<input type="radio" name="region" value="서울"/>서울
 						<input type="radio" name="region" value="경기"/>경기
 					</td>
 				</tr>
 				<tr>
-					<th>내용</th>
-					<td><textarea rows="20" cols="50" name="content"></textarea></td>
+					<td><textarea rows="20" cols="60" name="content"></textarea></td>
 				</tr>
 				<tr>
-					<th>이미지</th>
 					<td><input type="file" multiple name="file"/></td>
 				</tr>
 				</tbody>
 			</table>
 			<p>
-				<input type="submit" value="등록" />
+				<input type="submit" value="등록" class="btn-simple"/>
 				<a href="Reco">취소</a>
 			</p>			
 			</form>

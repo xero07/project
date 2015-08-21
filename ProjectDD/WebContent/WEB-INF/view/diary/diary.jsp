@@ -142,9 +142,9 @@
 	</div>
 
 
-		<div class="list_number">
+		<div class="list-number">
 			<p>
-			<div class="list_n_menu">
+			<div class="list-n-menu">
 				<span class="disabled">< 이전</span><span class="current">1</span><a
 					href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a
 					href="#?page=5">5</a><a href="#?page=2">다음 ></a>

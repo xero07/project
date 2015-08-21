@@ -137,7 +137,7 @@ a{ text-decoration: none; }
 }	
 
 #body .content-wrapper{
-	width: 96%;
+	width: 100%;
 	height: 1500px;
 	overflow:hidden;
 }
@@ -161,6 +161,7 @@ a{ text-decoration: none; }
 
 .search {
 	display: inline-block;
+	margin-bottom: 20px;
 }
 
 /*----------------------- 버튼이라는 공통분모 -----------------------------------*/
@@ -192,19 +193,19 @@ a{ text-decoration: none; }
 }
 
 /* ---------페이지------------------------------------------------------------------- */
-.list_number{
+.list-number{
 	padding-top:25px; text-align:center;
 	font-size: 13px;
 	clear: both;
 }
 
-.list_n_menu {
+.list-n-menu {
 	padding: 3px;
 	MARGIN: 3px;
 	TEXT-ALIGN: center
 }
 
-.list_n_menu A {
+.list-n-menu A {
 	padding: 4px 7px 4px 7px;
 	MARGIN: 2px;
 	BORDER: #ccc 1px solid;
@@ -212,17 +213,17 @@ a{ text-decoration: none; }
 	TEXT-DECORATION: none
 }
 
-.list_n_menu A:hover {
+.list-n-menu A:hover {
 	BORDER: #999 1px solid;
 	COLOR: #666;
 }
 
-.list_n_menu A:active {
+.list-n-menu A:active {
 	BORDER: #999 1px solid;
 	COLOR: #666;
 }
 
-.list_n_menu .current {
+.list-n-menu .current {
 	BORDER: #117bff 1px solid;
 	padding: 5px 8px 4px 8px;
 	FONT-WEIGHT: bold;
@@ -230,7 +231,7 @@ a{ text-decoration: none; }
 	COLOR: #036cb4;
 }
 
-.list_n_menu .disabled {
+.list-n-menu .disabled {
 	BORDER: #eee 1px solid;
 	padding: 5px 8px 4px 8px;
 	MARGIN: 2px;

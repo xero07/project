@@ -53,15 +53,6 @@
                <p><a href="">다음</a></p>
         </nav> -->
 
-	<div class="list_number">
-			<p>
-			<div class="list_n_menu">
-				<span class="disabled">< 이전</span><span class="current">1</span><a
-					href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a
-					href="#?page=5">5</a><a href="#?page=2">다음 ></a>
-			</div>
-			</p>
-	</div>
 
 		<div class="search">
 			<h1 class="hidden">게시판 글 검색</h1>
@@ -77,4 +68,13 @@
 				</fieldset>
 			</form>
 		</div>	
+	<div>
+			<p>
+			<div class="list-n-menu">
+				<span class="disabled">< 이전</span><span class="current">1</span><a
+					href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a
+					href="#?page=5">5</a><a href="#?page=2">다음 ></a>
+			</div>
+			</p>
+	</div>
 </div>
